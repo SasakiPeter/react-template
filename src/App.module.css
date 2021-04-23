@@ -1,0 +1,14 @@
+.hello-wrapper {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hello-world {
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+  color: white;
+}

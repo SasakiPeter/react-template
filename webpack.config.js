@@ -41,7 +41,23 @@ module.exports = {
           },
         ],
       },
-      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: isProduction
+                  ? "[hash:base64:16]"
+                  : "[path][name]_[local]",
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
