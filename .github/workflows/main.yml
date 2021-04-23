@@ -27,6 +27,3 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
-      # - run: yarn
-      # - run: yarn build
-      # - run: yarn test
