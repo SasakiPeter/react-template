@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App 1`] = `
+<div
+  className="hello-wrapper"
+>
+  <p
+    className="hello-world"
+  >
+    Hello, World!
+  </p>
+</div>
+`;
