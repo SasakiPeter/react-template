@@ -6,7 +6,7 @@ const isProduction = process.env.NODE_ENV === "production";
 module.exports = {
   mode: isProduction ? "production" : "development",
   entry: {
-    index: resolve("src", "index.js"),
+    index: resolve("src", "index.tsx"),
   },
   output: {
     path: resolve(__dirname, "dist"),
@@ -18,17 +18,28 @@ module.exports = {
     hot: true,
     open: true,
   },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env", "@babel/preset-react"],
+            },
           },
-        },
+          {
+            loader: "ts-loader",
+            options: {
+              configFile: resolve(__dirname, "tsconfig.json"),
+            },
+          },
+        ],
       },
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
     ],
