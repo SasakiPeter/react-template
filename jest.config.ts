@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from "@jest/types";
+
+const config: Config.InitialOptions = {
   preset: "ts-jest",
   testEnvironment: "node",
   roots: ["<rootDir>/src"],
@@ -24,3 +26,5 @@ module.exports = {
     "\\.(css|less)$": "identity-obj-proxy",
   },
 };
+
+export default config;
