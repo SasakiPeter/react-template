@@ -1,4 +1,6 @@
-module.exports = {
+import { Linter } from "eslint";
+
+const config: Linter.BaseConfig = {
   env: {
     browser: true,
     es2021: true,
@@ -28,3 +30,5 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
   },
 };
+
+export default config;
