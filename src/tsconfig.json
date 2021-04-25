@@ -1,10 +1,11 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "jsx": "react-jsx",
+    "lib": ["es2020", "dom"],
+    "jsx": "react",
     "sourceMap": true
   },
-  "exclude": ["**/*.spec.ts"]
+  "exclude": ["**/*.spec.tsx"]
 }

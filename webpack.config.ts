@@ -12,6 +12,7 @@ declare module "webpack" {
 }
 
 const config: Configuration = {
+  target: "web",
   mode: isProduction ? "production" : "development",
   entry: {
     index: resolve(__dirname, "src", "index.tsx"),
@@ -35,12 +36,7 @@ const config: Configuration = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env", "@babel/preset-react"],
-            },
-          },
+          { loader: "babel-loader" },
           {
             loader: "ts-loader",
             options: {

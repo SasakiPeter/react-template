@@ -1,23 +1,11 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "target": "es2020",
     "module": "commonjs",
-    "lib": ["es2020", "dom"],
-    "jsx": "react",
-    "sourceMap": true,
-    "outDir": "./dist",
+    "lib": ["es2020"],
     "rootDir": "./src",
-    "strict": true,
-    "moduleResolution": "node",
-    "baseUrl": "src",
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "removeComments": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "baseUrl": "src"
   },
-  "include": ["src/**/*"],
-  "compileOnSave": false
+  "include": ["src/**/*"]
 }
