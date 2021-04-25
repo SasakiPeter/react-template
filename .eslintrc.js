@@ -1,9 +1,8 @@
-import { Linter } from "eslint";
-
-const config: Linter.BaseConfig = {
+module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   plugins: ["@typescript-eslint"],
   parser: "@typescript-eslint/parser",
@@ -30,5 +29,3 @@ const config: Linter.BaseConfig = {
     "react/react-in-jsx-scope": "off",
   },
 };
-
-export default config;

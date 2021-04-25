@@ -7,7 +7,11 @@
   "scripts": {
     "start": "webpack serve",
     "build": "rm -rf ./dist && cross-env NODE_ENV=production webpack build",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --fix --ignore-path .gitignore '**/*.{ts,tsx}'",
+    "format": "prettier --write --ignore-path .gitignore '**/*.{js,ts,jsx,tsx,css,sass,scss}'",
+    "fix": "run-s lint format",
+    "precommit": "run-s fix test"
   },
   "dependencies": {
     "core-js": "^3.11.0",
@@ -27,6 +31,8 @@
     "@types/react-test-renderer": "^17.0.1",
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^3.11.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
@@ -35,9 +41,14 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
     "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.23.2",
     "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
     "react-test-renderer": "^17.0.2",
     "style-loader": "^2.0.0",
     "ts-jest": "^26.5.5",
