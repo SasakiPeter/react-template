@@ -11,7 +11,8 @@
     "lint": "eslint --fix --ignore-path .gitignore '**/*.{ts,tsx}'",
     "format": "prettier --write --ignore-path .gitignore '**/*.{js,ts,jsx,tsx,css,sass,scss}'",
     "fix": "run-s lint format",
-    "precommit": "run-s fix test"
+    "precommit": "run-s fix test",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "core-js": "^3.11.0",
