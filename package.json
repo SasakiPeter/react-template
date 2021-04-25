@@ -8,7 +8,10 @@
     "start": "webpack serve",
     "build": "rm -rf ./dist && cross-env NODE_ENV=production webpack build",
     "test": "jest",
-    "lint": "eslint"
+    "lint": "eslint --fix --ignore-path .gitignore '**/*.{ts,tsx}'",
+    "format": "prettier --write --ignore-path .gitignore '**/*.{js,ts,jsx,tsx,css,sass,scss}'",
+    "fix": "run-s lint format",
+    "precommit": "run-s fix test"
   },
   "dependencies": {
     "core-js": "^3.11.0",
@@ -44,6 +47,8 @@
     "husky": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
     "react-test-renderer": "^17.0.2",
     "style-loader": "^2.0.0",
     "ts-jest": "^26.5.5",
